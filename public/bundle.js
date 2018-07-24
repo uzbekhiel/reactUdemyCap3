@@ -54,13 +54,21 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _component = __webpack_require__(178);
+	var _family = __webpack_require__(178);
 
-	var _component2 = _interopRequireDefault(_component);
+	var _family2 = _interopRequireDefault(_family);
+
+	var _member = __webpack_require__(179);
+
+	var _member2 = _interopRequireDefault(_member);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_component2.default, null), document.getElementById('app'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    _family2.default,
+	    { lastName: 'Silva' },
+	    _react2.default.createElement(_member2.default, { name: 'Guilherme' })
+	), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -21461,19 +21469,58 @@
 	    value: true
 	});
 
-	exports.default = function () {
-	    return _react2.default.createElement(
-	        'h1',
-	        null,
-	        'Primeiro Componente!!'
-	    );
-	};
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+	    return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Fam\xEDlia'
+	        ),
+	        _react2.default.cloneElement(props.children, _extends({}, props))
+	    );
+	};
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (props) {
+	    return _react2.default.createElement(
+	        'div',
+	        null,
+	        props.name,
+	        ' ',
+	        _react2.default.createElement(
+	            'strong',
+	            null,
+	            ' ',
+	            props.lastName,
+	            ' '
+	        )
+	    );
+	};
 
 /***/ }
 /******/ ]);
