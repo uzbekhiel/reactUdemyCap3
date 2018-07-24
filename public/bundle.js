@@ -67,7 +67,9 @@
 	_reactDom2.default.render(_react2.default.createElement(
 	    _family2.default,
 	    { lastName: 'Silva' },
-	    _react2.default.createElement(_member2.default, { name: 'Guilherme' })
+	    _react2.default.createElement(_member2.default, { name: 'Guilherme' }),
+	    _react2.default.createElement(_member2.default, { name: 'Rafael' }),
+	    _react2.default.createElement(_member2.default, { name: 'Julia' })
 	), document.getElementById('app'));
 
 /***/ },
